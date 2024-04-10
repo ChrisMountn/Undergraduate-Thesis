@@ -1,0 +1,17 @@
+This is the repository for 
+Machine Learning for Parenting: Using Supervised Machine Learning to Predict RIFL Scores Using Text and Audio Mediums 
+by Christopher Mountain, supervised by Professor Eldan Cohen.
+
+The data_processing_and_feature_engineering folder contains data reformatting code for the data as it was given to me
+by researchers at OISE. The processing scripts are designed to be run on this data to get it into a usable format.
+The feature_embedding scripts can be run to construct the features from the formatted data so that they become npz files
+containing features and labels.
+
+The models each load in an npz file, and then proceed train and execute a model. Please be conscious of the type of data
+you are loading in; for example, the GRU, Transformer, and ROCKET will require sequential feature data as generated in 
+audio_feature_embedding.ipynb or in the second part of text_feature_embedding.ipynb. Other models take singular features
+for each sample. These models are Linear Regression, Logistic Regression, XGB_Classifier, XGB_Ranker, and XGBandSVR.
+
+By convention, anywhere we load in feature set, "X-y.npz" is set as a placeholder. Change this to the actual feature set you are using.
+
+If you have any questions, don't hesitate to contact me at christopher dot mountain at mail.utoronto.ca.
